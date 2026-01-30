@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MA Xiangjia | 马向佳 - Portfolio</title>
+    <title>马向佳 | MA Xiangjia - 个人作品集</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -30,10 +30,10 @@
         }
 
         body {
-            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            font-family: 'Noto Sans SC', 'Poppins', sans-serif;
             background-color: var(--dark);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
@@ -88,6 +88,41 @@
             25% { transform: translate(50px, 50px) rotate(5deg); }
             50% { transform: translate(0, 100px) rotate(0deg); }
             75% { transform: translate(-50px, 50px) rotate(-5deg); }
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn.active {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .lang-btn:not(.active) {
+            background: var(--dark-light);
+            color: var(--text);
+        }
+
+        .lang-btn:hover {
+            transform: scale(1.05);
         }
 
         /* Navigation */
@@ -203,10 +238,11 @@
             background-clip: text;
         }
 
-        .hero-content .chinese-name {
-            font-size: 2rem;
+        .hero-content .english-name {
+            font-size: 1.5rem;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .hero-content .tagline {
@@ -824,6 +860,10 @@
             .menu-toggle {
                 display: flex;
             }
+
+            .lang-switch {
+                right: 70px;
+            }
         }
 
         @media (max-width: 600px) {
@@ -831,8 +871,8 @@
                 font-size: 2.5rem;
             }
 
-            .hero-content .chinese-name {
-                font-size: 1.5rem;
+            .hero-content .english-name {
+                font-size: 1.2rem;
             }
 
             .projects-grid {
@@ -864,9 +904,9 @@
 </head>
 <body>
     <!-- Language Switcher -->
-    <div class="lang-switch" style="position: fixed; top: 20px; right: 20px; z-index: 1001; display: flex; gap: 0.5rem;">
-        <a href="index.html" class="lang-btn" style="padding: 0.5rem 1rem; border: none; border-radius: 20px; cursor: pointer; font-weight: 500; transition: all 0.3s ease; text-decoration: none; font-size: 0.9rem; background: var(--gradient); color: white;">EN</a>
-        <a href="index-zh.html" class="lang-btn" style="padding: 0.5rem 1rem; border: none; border-radius: 20px; cursor: pointer; font-weight: 500; transition: all 0.3s ease; text-decoration: none; font-size: 0.9rem; background: var(--dark-light); color: var(--text);">中文</a>
+    <div class="lang-switch">
+        <a href="index.html" class="lang-btn">EN</a>
+        <a href="index-zh.html" class="lang-btn active">中文</a>
     </div>
 
     <!-- Animated Background -->
@@ -878,15 +918,15 @@
 
     <!-- Navigation -->
     <nav>
-        <div class="logo">MXJ</div>
+        <div class="logo">马向佳</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#experience">工作经历</a></li>
+            <li><a href="#projects">项目</a></li>
+            <li><a href="#education">教育背景</a></li>
+            <li><a href="#contact">联系方式</a></li>
         </ul>
         <div class="menu-toggle">
             <span></span>
@@ -898,17 +938,17 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>MA Xiangjia</h1>
-            <p class="chinese-name">马向佳</p>
-            <p class="tagline">UC Davis MSBA '26 • Business Analyst • Data Scientist</p>
+            <h1>马向佳</h1>
+            <p class="english-name">Maxine Ma</p>
+            <p class="tagline">UC Davis 商业分析硕士 '26 • 商业分析师 • 数据科学家</p>
             <div class="typing-text" id="typing"></div>
-            <p>Bridging the gap between business insights and technology solutions. Passionate about transforming data into actionable strategies.</p>
+            <p>连接商业洞察与技术解决方案，专注于将数据转化为可执行的战略决策。</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-briefcase"></i> View Projects
+                    <i class="fas fa-briefcase"></i> 查看项目
                 </a>
                 <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Contact Me
+                    <i class="fas fa-envelope"></i> 联系我
                 </a>
             </div>
         </div>
@@ -920,29 +960,29 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="section-header">
-            <h2>About Me</h2>
-            <p>A multi-disciplinary professional with a passion for innovation</p>
+            <h2>关于我</h2>
+            <p>跨领域专业人才，热衷于创新与数据驱动决策</p>
         </div>
         <div class="about-content reveal">
             <div class="about-image">
-                <img src="profile-photo.jpg" alt="Maxine Ma" style="width: 100%; height: 350px; object-fit: cover; border-radius: 20px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="profile-photo.jpg" alt="马向佳" style="width: 100%; height: 350px; object-fit: cover; border-radius: 20px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="width: 100%; height: 350px; background: var(--gradient); border-radius: 20px; display: none; align-items: center; justify-content: center;">
                     <i class="fas fa-user" style="font-size: 8rem; color: white;"></i>
                 </div>
             </div>
             <div class="about-text">
-                <h3>Hello! I'm Maxine 👋</h3>
-                <p>I'm a Master's student at UC Davis studying Business Analytics, with a background in Finance. Currently leading a year-long impact evaluation project for Golden 1 Credit Union, analyzing a $10M community investment in Sacramento. My experience also includes business consulting at Accenture and financial analysis at ICBC.</p>
-                <p>I'm passionate about leveraging data and technology to solve complex business problems. With skills in Python, SQL, machine learning, and large language models, I bridge the gap between business strategy and technical implementation.</p>
-                <p>When I'm not analyzing data or writing code, you can find me performing with my band or exploring new music genres.</p>
+                <h3>你好！我是向佳 👋</h3>
+                <p>我是加州大学戴维斯分校（UC Davis）商业分析硕士在读，本科毕业于湖南工商大学金融学专业。目前正在主导 Golden 1 Credit Union 的年度影响力评估项目，分析其在萨克拉门托的 1000 万美元社区投资。此前在埃森哲从事商业咨询，在中国工商银行积累了金融分析经验。</p>
+                <p>我热衷于利用数据和技术解决复杂的商业问题。凭借 Python、SQL、机器学习和大语言模型等技能，我致力于搭建商业战略与技术实现之间的桥梁。</p>
+                <p>工作之余，你可以在我的乐队演出中找到我，或者一起探索不同的音乐风格。</p>
                 <div class="about-stats">
                     <div class="stat-item">
                         <div class="number">4+</div>
-                        <div class="label">Internships</div>
+                        <div class="label">实习经历</div>
                     </div>
                     <div class="stat-item">
                         <div class="number">5+</div>
-                        <div class="label">Projects</div>
+                        <div class="label">项目经验</div>
                     </div>
                     <div class="stat-item">
                         <div class="number">3.5</div>
@@ -956,68 +996,68 @@
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="section-header">
-            <h2>Skills & Expertise</h2>
-            <p>A diverse toolkit for solving complex problems</p>
+            <h2>技能专长</h2>
+            <p>多元化的工具与能力，解决复杂商业问题</p>
         </div>
         <div class="skills-grid">
             <div class="skill-category reveal">
-                <h3><i class="fas fa-chart-line"></i> Business Analysis</h3>
+                <h3><i class="fas fa-chart-line"></i> 商业分析</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Market Research</span>
-                    <span class="skill-tag">Data Analysis</span>
-                    <span class="skill-tag">Financial Modeling</span>
-                    <span class="skill-tag">Business Consulting</span>
-                    <span class="skill-tag">Risk Assessment</span>
-                    <span class="skill-tag">Strategic Planning</span>
+                    <span class="skill-tag">市场调研</span>
+                    <span class="skill-tag">数据分析</span>
+                    <span class="skill-tag">财务建模</span>
+                    <span class="skill-tag">商业咨询</span>
+                    <span class="skill-tag">风险评估</span>
+                    <span class="skill-tag">战略规划</span>
                 </div>
             </div>
             <div class="skill-category reveal">
-                <h3><i class="fas fa-code"></i> Programming & Analytics</h3>
+                <h3><i class="fas fa-code"></i> 编程与分析</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Python (VS Code / Jupyter)</span>
                     <span class="skill-tag">R + RStudio</span>
                     <span class="skill-tag">SQL (MySQL)</span>
                     <span class="skill-tag">Excel / Google Sheets</span>
-                    <span class="skill-tag">Web Scraping</span>
+                    <span class="skill-tag">网络爬虫</span>
                 </div>
             </div>
             <div class="skill-category reveal">
-                <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
+                <h3><i class="fas fa-robot"></i> AI 与机器学习</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Large Language Models</span>
-                    <span class="skill-tag">Random Forest</span>
-                    <span class="skill-tag">Gradient Boosting</span>
-                    <span class="skill-tag">Clustering</span>
-                    <span class="skill-tag">Association Rules</span>
+                    <span class="skill-tag">大语言模型 (LLM)</span>
+                    <span class="skill-tag">随机森林</span>
+                    <span class="skill-tag">梯度提升</span>
+                    <span class="skill-tag">聚类分析</span>
+                    <span class="skill-tag">关联规则</span>
                     <span class="skill-tag">EViews</span>
                 </div>
             </div>
             <div class="skill-category reveal">
-                <h3><i class="fas fa-tasks"></i> Business Management</h3>
+                <h3><i class="fas fa-tasks"></i> 商业管理</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Project Management</span>
-                    <span class="skill-tag">Team Leadership</span>
-                    <span class="skill-tag">Marketing Strategy</span>
-                    <span class="skill-tag">Content Marketing</span>
-                    <span class="skill-tag">Cross-functional Coordination</span>
+                    <span class="skill-tag">项目管理</span>
+                    <span class="skill-tag">团队领导</span>
+                    <span class="skill-tag">营销策略</span>
+                    <span class="skill-tag">内容营销</span>
+                    <span class="skill-tag">跨部门协调</span>
                 </div>
             </div>
             <div class="skill-category reveal">
-                <h3><i class="fas fa-users-cog"></i> Collaboration Tools</h3>
+                <h3><i class="fas fa-users-cog"></i> 协作工具</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">GitHub (Version Control)</span>
-                    <span class="skill-tag">Asana (Project Management)</span>
+                    <span class="skill-tag">GitHub 版本控制</span>
+                    <span class="skill-tag">Asana 项目管理</span>
                     <span class="skill-tag">Slack / Teams</span>
-                    <span class="skill-tag">Data Visualization</span>
+                    <span class="skill-tag">数据可视化</span>
                 </div>
             </div>
             <div class="skill-category reveal">
-                <h3><i class="fas fa-language"></i> Languages & Tests</h3>
+                <h3><i class="fas fa-language"></i> 语言能力</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Mandarin (Native)</span>
-                    <span class="skill-tag"><a href="TOEFL_Score_Report.pdf" target="_blank" style="color: inherit; text-decoration: none;">TOEFL 106 📄</a></span>
+                    <span class="skill-tag">普通话（母语）</span>
+                    <span class="skill-tag"><a href="TOEFL_Score_Report.pdf" target="_blank" style="color: inherit; text-decoration: none;">托福 106 📄</a></span>
                     <span class="skill-tag"><a href="GRE_Score_Report.pdf" target="_blank" style="color: inherit; text-decoration: none;">GRE 333 📄</a></span>
-                    <span class="skill-tag">CET-6</span>
+                    <span class="skill-tag">英语六级</span>
                 </div>
             </div>
         </div>
@@ -1026,57 +1066,57 @@
     <!-- Experience Section -->
     <section class="experience" id="experience">
         <div class="section-header">
-            <h2>Professional Experience</h2>
-            <p>My journey across consulting, marketing, and finance</p>
+            <h2>工作经历</h2>
+            <p>咨询、金融与数据分析领域的职业成长</p>
         </div>
         <div class="timeline">
             <div class="timeline-item reveal">
                 <div class="timeline-content">
-                    <div class="date">Sep 2025 - Jun 2026</div>
-                    <h3>Project Manager & Data Analyst</h3>
-                    <div class="company">Golden 1 Credit Union | San Francisco, CA, USA</div>
+                    <div class="date">2025年9月 - 2026年6月</div>
+                    <h3>项目经理 & 数据分析师</h3>
+                    <div class="company">Golden 1 Credit Union | 美国加州旧金山</div>
                     <ul>
-                        <li>Leading a year-long impact evaluation of Golden 1's $10M community investment in Del Paso Heights, Sacramento</li>
-                        <li>Managing a cross-functional team of 5 MSBA/MBA students, coordinating with Golden 1 stakeholders and 4 nonprofit partners</li>
-                        <li>Designing KPIs and surveys to measure financial literacy, trust in banking, and community development outcomes</li>
-                        <li>Building data products and Tableau dashboards to track ROI, credit scores, and household savings trends</li>
-                        <li>Authored Statement of Work defining project scope, timeline, risk mitigation, and deliverables</li>
+                        <li>主导为期一年的社区投资影响力评估项目，分析 Golden 1 在萨克拉门托 Del Paso Heights 社区的 1000 万美元投资</li>
+                        <li>管理由 5 名 MSBA/MBA 学生组成的跨职能团队，协调 Golden 1 利益相关者和 4 家非营利合作伙伴</li>
+                        <li>设计 KPI 和调查问卷，评估金融素养、银行信任度和社区发展成果</li>
+                        <li>构建数据产品和 Tableau 仪表盘，追踪投资回报率、信用评分和家庭储蓄趋势</li>
+                        <li>撰写项目工作说明书（SOW），定义项目范围、时间线、风险控制和交付成果</li>
                     </ul>
                 </div>
             </div>
             <div class="timeline-item reveal">
                 <div class="timeline-content">
-                    <div class="date">Jun 2023 - Sep 2023</div>
-                    <h3>Business Research Intern</h3>
-                    <div class="company">Accenture | Hong Kong</div>
+                    <div class="date">2023年6月 - 2023年9月</div>
+                    <h3>商业研究实习生</h3>
+                    <div class="company">埃森哲 Accenture | 中国香港</div>
                     <ul>
-                        <li>Conducted business research projects including market research, data analysis, and consulting report preparation</li>
-                        <li>Researched different business models to offer insights and solutions to clients</li>
-                        <li>Participated in internal training and discussions with senior consultants</li>
+                        <li>开展商业研究项目，包括市场调研、数据分析和咨询报告撰写</li>
+                        <li>研究不同商业模式，为客户提供洞察和解决方案</li>
+                        <li>参与内部培训和高级顾问的讨论交流</li>
                     </ul>
                 </div>
             </div>
             <div class="timeline-item reveal">
                 <div class="timeline-content">
-                    <div class="date">Jun 2022 - Sep 2022</div>
-                    <h3>Assistant, Financial Markets Department</h3>
-                    <div class="company">Industrial and Commercial Bank of China | Changsha, Hunan, China</div>
+                    <div class="date">2022年6月 - 2022年9月</div>
+                    <h3>金融市场部助理</h3>
+                    <div class="company">中国工商银行 | 中国湖南长沙</div>
                     <ul>
-                        <li>Wrote market analysis reports on macroeconomic conditions and interest rate forecasts</li>
-                        <li>Assisted in market research and client needs analysis</li>
-                        <li>Predicted returns of financial products</li>
+                        <li>撰写市场分析报告，分析宏观经济形势和利率走势预测</li>
+                        <li>协助开展市场调研和客户需求分析</li>
+                        <li>预测金融产品收益率</li>
                     </ul>
                 </div>
             </div>
             <div class="timeline-item reveal">
                 <div class="timeline-content">
-                    <div class="date">Jun 2021 - Sep 2021</div>
-                    <h3>Lobby Manager Intern</h3>
-                    <div class="company">Industrial and Commercial Bank of China | Changsha, Hunan, China</div>
+                    <div class="date">2021年6月 - 2021年9月</div>
+                    <h3>大堂经理实习生</h3>
+                    <div class="company">中国工商银行 | 中国湖南长沙</div>
                     <ul>
-                        <li>Guided 100+ customers daily in using smart banking kiosks</li>
-                        <li>Assessed clients' financial conditions and repayment abilities</li>
-                        <li>Provided advice on post-loan risk monitoring and prevention</li>
+                        <li>每日指导 100+ 客户使用智能柜员机办理业务</li>
+                        <li>评估客户财务状况和还款能力</li>
+                        <li>提供贷后风险监控和预防建议</li>
                     </ul>
                 </div>
             </div>
@@ -1086,8 +1126,8 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="section-header">
-            <h2>Featured Projects</h2>
-            <p>Showcasing my analytical and technical capabilities</p>
+            <h2>项目展示</h2>
+            <p>展示分析能力与技术实践</p>
         </div>
         <div class="projects-grid">
             <div class="project-card reveal">
@@ -1095,14 +1135,14 @@
                     <i class="fas fa-hand-holding-usd"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Golden 1 DPH Impact Evaluation</h3>
-                    <div class="year">2025 - 2026 | San Francisco Bay Area</div>
-                    <p>Year-long practicum evaluating $10M community investment impact. Designed KPIs for financial literacy, built Tableau dashboards, and coordinated with 4 nonprofit partners to measure ROI and social outcomes.</p>
+                    <h3>Golden 1 社区投资影响力评估</h3>
+                    <div class="year">2025 - 2026 | 旧金山湾区</div>
+                    <p>为期一年的项目，评估 1000 万美元社区投资影响。设计金融素养 KPI，构建 Tableau 仪表盘，协调 4 家非营利合作伙伴，衡量投资回报率和社会效益。</p>
                     <div class="project-tags">
-                        <span class="project-tag">Project Management</span>
-                        <span class="project-tag">Impact Analysis</span>
+                        <span class="project-tag">项目管理</span>
+                        <span class="project-tag">影响力分析</span>
                         <span class="project-tag">Tableau</span>
-                        <span class="project-tag">Survey Design</span>
+                        <span class="project-tag">问卷设计</span>
                     </div>
                 </div>
             </div>
@@ -1111,13 +1151,13 @@
                     <i class="fas fa-shopping-cart"></i>
                 </div>
                 <div class="project-info">
-                    <h3>E-commerce User Behavior Analysis</h3>
+                    <h3>电商用户行为分析</h3>
                     <div class="year">2024</div>
-                    <p>Applied clustering and association rule mining to identify consumer preferences and optimize marketing strategies including targeted recommendations and loyalty programs.</p>
+                    <p>运用聚类分析和关联规则挖掘识别消费者偏好，优化营销策略，包括精准推荐和会员忠诚度计划。</p>
                     <div class="project-tags">
-                        <span class="project-tag">Clustering</span>
-                        <span class="project-tag">Association Rules</span>
-                        <span class="project-tag">Marketing</span>
+                        <span class="project-tag">聚类分析</span>
+                        <span class="project-tag">关联规则</span>
+                        <span class="project-tag">营销优化</span>
                     </div>
                 </div>
             </div>
@@ -1126,13 +1166,13 @@
                     <i class="fas fa-car"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Tesla Financial Analysis & Valuation</h3>
+                    <h3>特斯拉财务分析与估值</h3>
                     <div class="year">2023</div>
-                    <p>Comprehensive financial analysis using DCF valuation, ratio analysis, and trend analysis to evaluate Tesla's profitability, solvency, and growth potential.</p>
+                    <p>运用 DCF 估值、比率分析和趋势分析，全面评估特斯拉的盈利能力、偿债能力和增长潜力。</p>
                     <div class="project-tags">
-                        <span class="project-tag">DCF</span>
-                        <span class="project-tag">Financial Analysis</span>
-                        <span class="project-tag">Valuation</span>
+                        <span class="project-tag">DCF估值</span>
+                        <span class="project-tag">财务分析</span>
+                        <span class="project-tag">企业估值</span>
                     </div>
                 </div>
             </div>
@@ -1141,13 +1181,13 @@
                     <i class="fas fa-link"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Blockchain in Finance Research</h3>
+                    <h3>区块链金融应用研究</h3>
                     <div class="year">2023</div>
-                    <p>Researched blockchain applications in payments, supply chain finance, asset securitization, and insurance. Evaluated impact on transparency and cost reduction.</p>
+                    <p>研究区块链在支付、供应链金融、资产证券化和保险领域的应用，评估其对透明度和成本降低的影响。</p>
                     <div class="project-tags">
-                        <span class="project-tag">Blockchain</span>
-                        <span class="project-tag">FinTech</span>
-                        <span class="project-tag">Research</span>
+                        <span class="project-tag">区块链</span>
+                        <span class="project-tag">金融科技</span>
+                        <span class="project-tag">行业研究</span>
                     </div>
                 </div>
             </div>
@@ -1156,13 +1196,13 @@
                     <i class="fas fa-chart-bar"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Stock Market Prediction Model</h3>
+                    <h3>股票市场预测模型</h3>
                     <div class="year">2022</div>
-                    <p>Built ML models using Random Forest and Gradient Boosting to predict stock trends. Implemented feature engineering, cross-validation, and hyperparameter tuning.</p>
+                    <p>使用随机森林和梯度提升算法构建机器学习模型预测股票走势。实现特征工程、交叉验证和超参数调优。</p>
                     <div class="project-tags">
                         <span class="project-tag">Python</span>
-                        <span class="project-tag">Machine Learning</span>
-                        <span class="project-tag">Finance</span>
+                        <span class="project-tag">机器学习</span>
+                        <span class="project-tag">量化金融</span>
                     </div>
                 </div>
             </div>
@@ -1172,49 +1212,49 @@
     <!-- Education Section -->
     <section class="education" id="education">
         <div class="section-header">
-            <h2>Education</h2>
-            <p>Academic foundation in finance and business</p>
+            <h2>教育背景</h2>
+            <p>金融与商业领域的学术基础</p>
         </div>
         <div class="education-cards">
             <div class="education-card reveal">
-                <h3>University of California, Davis</h3>
-                <div class="degree">Master of Science in Business Analytics (MSBA)</div>
+                <h3>加州大学戴维斯分校 (UC Davis)</h3>
+                <div class="degree">商业分析硕士 (MSBA)</div>
                 <div class="date">2025 - 2026</div>
-                <p>Pursuing advanced studies in data analytics, machine learning, and business intelligence in the San Francisco Bay Area.</p>
+                <p>在旧金山湾区深造数据分析、机器学习和商业智能领域的高级课程。</p>
             </div>
             <div class="education-card reveal">
-                <h3>Hunan University of Technology and Business</h3>
-                <div class="degree">Bachelor's Degree in Finance (Joint International Program)</div>
-                <div class="date">Sep 2021 - Jun 2025</div>
-                <p><strong>GPA:</strong> 3.5/4.0 | <strong>Avg Score:</strong> 92</p>
-                <p><strong>Relevant Coursework:</strong> Econometrics, Corporate Finance, International Finance, Financial Accounting, Money and Banking</p>
+                <h3>湖南工商大学</h3>
+                <div class="degree">金融学学士（中美联合培养项目）</div>
+                <div class="date">2021年9月 - 2025年6月</div>
+                <p><strong>GPA:</strong> 3.5/4.0 | <strong>平均分:</strong> 92</p>
+                <p><strong>主修课程:</strong> 计量经济学、公司金融、国际金融、财务会计、货币银行学</p>
             </div>
         </div>
 
         <!-- Awards -->
         <div class="section-header" style="margin-top: 4rem;">
-            <h2>Awards & Honors</h2>
+            <h2>荣誉奖项</h2>
         </div>
         <div class="awards-grid">
             <div class="award-item reveal">
                 <i class="fas fa-trophy"></i>
-                <h4>National Scholarship</h4>
-                <p>Top Academic Excellence</p>
+                <h4>国家奖学金</h4>
+                <p>学业优秀奖</p>
             </div>
             <div class="award-item reveal">
                 <i class="fas fa-medal"></i>
-                <h4>English Competition</h4>
-                <p>National 1st Prize</p>
+                <h4>全国大学生英语竞赛</h4>
+                <p>一等奖</p>
             </div>
             <div class="award-item reveal">
                 <i class="fas fa-star"></i>
-                <h4>Outstanding Youth</h4>
-                <p>May 4th Award</p>
+                <h4>五四优秀青年</h4>
+                <p>校级荣誉</p>
             </div>
             <div class="award-item reveal">
                 <i class="fas fa-award"></i>
-                <h4>Merit Student</h4>
-                <p>University Level</p>
+                <h4>三好学生</h4>
+                <p>校级荣誉</p>
             </div>
         </div>
     </section>
@@ -1222,8 +1262,8 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-header">
-            <h2>Get In Touch</h2>
-            <p>Let's connect and create something amazing together</p>
+            <h2>联系方式</h2>
+            <p>期待与您建立联系，共同创造精彩</p>
         </div>
         <div class="contact-info">
             <div class="contact-item reveal">
@@ -1236,7 +1276,7 @@
             </div>
             <div class="contact-item reveal">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>San Francisco, CA</span>
+                <span>美国加州旧金山</span>
             </div>
         </div>
         <div class="social-links reveal">
@@ -1248,7 +1288,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 MA Xiangjia | 马向佳. All rights reserved.</p>
+        <p>&copy; 2025 马向佳 | MA Xiangjia. 保留所有权利。</p>
     </footer>
 
     <script>
@@ -1273,10 +1313,10 @@
         // Typing Effect
         const typingText = document.getElementById('typing');
         const phrases = [
-            'Turning Data into Insights 📊',
-            'Building Smart Solutions 💻',
-            'Driving Business Growth 📈',
-            'Bridging Tech & Strategy 🌉'
+            '将数据转化为洞察 📊',
+            '构建智能解决方案 💻',
+            '驱动业务增长 📈',
+            '连接技术与战略 🌉'
         ];
         let phraseIndex = 0;
         let charIndex = 0;
